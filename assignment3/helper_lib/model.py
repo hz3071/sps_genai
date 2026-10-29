@@ -57,3 +57,9 @@ class Discriminator(nn.Module):
         x = self.sigmoid(x)
 
         return x
+
+def get_model(model_name):
+    if model_name == "GAN":
+        return Generator(), Discriminator()
+    else:
+        raise ValueError(f"Unsupported model: {model_name}")
